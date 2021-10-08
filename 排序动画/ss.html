@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>排序动画</title>
+        <style>
+            .mainDiv{/*主题面板*/
+                text-align: center;
+                background-color: aliceblue;
+                border-radius: 20px;
+                width: 100%;
+                height: 100%;
+                margin:auto;
+                position: absolute;
+            }
+            .sort_li{/*演示界面的边框，随着元素的高度变化而变化*/
+                display: flex;
+                align-items: flex-end;
+                border: 1px solid #ccc;
+            }
+            li{
+                margin-left: 10px;
+                width: 50px;
+                list-style: none;
+                background-color: skyblue;
+                position: relative;
+            }
+            li p{
+                position: absolute;
+                width: 50px;
+                text-align: center;
+            }
+            .completed{/*完成之后颜色*/
+                background-color: green;
+            }
+            .bubbling1{
+                background-color: red;
+            }
+            .bubbling2{/*选中的颜色*/
+                background-color: orange;
+            }
+            .form-group{/*上下选择框之间的间隔*/
+                margin-bottom: 10px;
+            }
+            .num-input,.num-out{/*输入输出框的长度*/
+                width: 600px;
+            }
+        </style>
+        <script type="text/javascript" src="insert.js"></script>
+        <script type="text/javascript" src="sort.js"></script>
+        <script type="text/javascript" src="select.js"></script>
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="form-group">
+                <label for="arrLen">数组长度：</label>
+                <input name="arrLen" class="form-control" id="form-control" placeholder="请输入数组长度">
+                <input value="冒泡排序" id="createArr" onclick="initNum()" type="button">
+                <input value="选择排序" id="createArr" onclick="selectsort()" type="button">
+                <input value="插入排序" id="createArr" onclick="insertsort()" type="button">
+            </div>
+            <div class="form-group">
+                <label for="arr">排序前的数组：</label><textarea name="arr" class="num-input" id="num-input" rows="2" readonly></textarea>
+                <label for="arr">排序后的数组：</label><textarea name="arr" class="num-out" id="num-out" rows="2" readonly></textarea>
+            </div>
+            <div id="sort_ul">
+                <ul class="sort_li"></ul>
+            </div>
+        </div>
+    </body>
+</html>
